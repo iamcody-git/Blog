@@ -5,6 +5,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Home from "./Pages/Blog/Home"
 import Createblog from "./Pages/Blog/createblog"
 import Editblog from "./Pages/Blog/Editblog"
+import SingleBlog from "./Pages/Blog/SingleBlog"
 
 function App() {
   
@@ -15,8 +16,9 @@ function App() {
       <Route path="/" element={< Home/>} />
       <Route path="/login" element={<Login/>} />
       <Route path="/register" element ={<Register/>} />
-      <Route path="/add/id" element={< Createblog/>}/>
-      <Route path="/edit/id" element={< Editblog/>} />
+      <Route path="/blog/add" element={< Createblog/>}/>
+      <Route path="/blog/edit" element={< Editblog/>} />
+      <Route path="/blog/id" element={< SingleBlog/>} />
     </Routes>
     </BrowserRouter>
     </>
