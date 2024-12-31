@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Form = ({ type, onSubmit }) => {
+const Form = ({ type, onSubmit, user }) => {
   const [data, setData] = useState({
     email: "", 
     username: "",
@@ -33,6 +33,8 @@ const Form = ({ type, onSubmit }) => {
                 </h1>
               </div>
 
+              {type === 'Login' && `Hello, ${user?.username}`}
+
               <form onSubmit={handleSubmit}>
                 <div className="divide-y divide-gray-200">
                   <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
@@ -59,7 +61,7 @@ const Form = ({ type, onSubmit }) => {
                         <input
                           autoComplete="off"
                           id="username"
-                          name="email"
+                          name="username"
                           type="text"
                           className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
                           placeholder="Username"
@@ -102,7 +104,7 @@ const Form = ({ type, onSubmit }) => {
                   type ==="Register"?(
                     <Link to={'/login'} style={{color:"blue"}}>Goto Login</Link>
                   ):(
-                    <Link to={'/register'} style={{color:"blue"}}>Goto Login</Link>
+                    <Link to={'/register'} style={{color:"blue"}}>Goto Register</Link>
                   )
                 }
               </form>
